@@ -8,8 +8,8 @@ class MoviesController extends Controller
 {
     public function index()
     {
-        $movies = Movies::all();
-        $message = 'ElChicopenetrador';
+        $movies = Movies::paginate(10);
+        $message = 'Movie Catalog';
         return view('pages.index', compact('movies', 'message'));
     }
 
